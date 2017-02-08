@@ -4,46 +4,55 @@
        $("#submit_evaluation").click(function(){
          var filledOut=true;
          var theAnswers = [];
+
          //check q1
          if(document.getElementById("textQ1").value===""){
           filledOut=false;
-          console.log("please fill out question 1");
+          document.getElementById("noQuestion1").style.display='block';
          }
          else{
           theAnswers.push(document.getElementById("textQ1").value);
+          document.getElementById("noQuestion1").style.display='none';
          }
+
          //check q2
          if(document.getElementById("radioYesQ2").checked){
           if(document.getElementById("textQ2").value===""){
             filledOut = false;
-            console.log("please fill out question 2")
+            document.getElementById("noQuestion2").style.display='block';
           }
           else{
             theAnswers.push("YES: " + document.getElementById('textQ2').value);
+            document.getElementById("noQuestion2").style.display='none';
           }
          }
          else if(document.getElementById('radioNoQ2').checked){
           theAnswers.push("No");
+          document.getElementById("noQuestion2a").style.display='none';
+          document.getElementById("noQuestion2").style.display='none';
          }
          else{
-          console.log("you didnt answer question 2");
+          document.getElementById("noQuestion2a").style.display='block';
           filledOut = false;
          }
+
          //check q3
          if(document.getElementById("textQ3").value===""){
           filledOut=false;
-          console.log("please fill out question 3");
+          document.getElementById("noQuestion3").style.display='block';
          }
          else{
+          document.getElementById("noQuestion3").style.display='none';
           theAnswers.push(document.getElementById("textQ3").value);
          }
 
          //check q4
          if(document.getElementById("textQ4").value===""){
           filledOut=false;
-          console.log("please fill out question 4");
+          document.getElementById("noQuestion4").style.display='block';
          }
          else{
+          document.getElementById("noQuestion4").style.display='none';
           theAnswers.push(document.getElementById("textQ4").value);
          }
 
@@ -51,33 +60,37 @@
          if(document.getElementById("radioYesQ5").checked){
           if(document.getElementById("textQ5").value===""){
             filledOut = false;
-            console.log("please fill out question 5")
+            document.getElementById("noQuestion5").style.display='block';
+            document.getElementById("noQuestion5a").style.display='none';
           }
           else{
             theAnswers.push("YES: " + document.getElementById('textQ5').value);
+            document.getElementById("noQuestion5").style.display='none';
+            document.getElementById("noQuestion5a").style.display='none';
           }
          }
          else if(document.getElementById('radioNoQ5').checked){
           theAnswers.push("No");
+          document.getElementById("noQuestion5a").style.display='none';
+          document.getElementById("noQuestion5").style.display='none';
          }
          else{
+          document.getElementById("noQuestion5a").style.display='block';
           filledOut = false;
-          console.log("you didnt answer question 5");
          }
 
          //check q6
          if(document.getElementById("textQ6").value===""){
           filledOut=false;
-          console.log("please fill out question 6");
+          document.getElementById("noQuestion6").style.display='block';
          }
          else{
+          document.getElementById("noQuestion6").style.display='none';
           theAnswers.push(document.getElementById("textQ6").value);
          }
 
 
         if(filledOut){
-          console.log("the answers: ", theAnswers);
-               
                        
             var evaluation_submitted = {"qas": theAnswers};
             target = "resources/process_evaluation.php";
@@ -114,7 +127,7 @@
 
         }
         else{
-          console.log("form not filled out.")
+          console.log("form not filled out.");
         }
 
 
@@ -252,6 +265,16 @@
                     <button id="reset_eval_form" type="reset" class="form-submit-reset big-form-button">Clear Form</button>
                   </div>
                 </div>
+              </li>
+              <li id="notFilledOut">
+                <p id="noQuestion1" style="display:none; color:red; font-size:10px">Question 1 not filled out</p>
+                <p id="noQuestion2" style="display:none; color:red; font-size:10px">Question 2 not filled out</p>
+                <p id="noQuestion2a" style="display:none; color:red; font-size:10px">Question 2 not answered</p>
+                <p id="noQuestion3" style="display:none; color:red; font-size:10px">Question 3 not filled out</p>
+                <p id="noQuestion4" style="display:none; color:red; font-size:10px">Question 4 not filled out</p>
+                <p id="noQuestion5" style="display:none; color:red; font-size:10px">Question 5 not filled out</p>
+                <p id="noQuestion5a" style="display:none; color:red; font-size:10px">Question 5 not answered</p>
+                <p id="noQuestion6" style="display:none; color:red; font-size:10px">Question 6 not filled out</p>
               </li>
             </ul>
           </div>
