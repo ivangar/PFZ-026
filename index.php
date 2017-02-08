@@ -47,70 +47,6 @@ if(isset($_POST['logout_submitted']))
 }
 
 
-// //Create a Program instance
-// $EnglishProgram = new Program();
-
-// //----------------DEFINE CONSTANT VARIABLES FOR THIS PROGRAM-----------------------//
-
-// $program_id = 'PFZ_026';   //Program ID
-// // $pretestId = '';  //program_section_id that belongs to the specific program pretest from program_sections table
-// // $posttestId = '';  //program_section_id that belongs to the specific program post test from program_sections table
-// // $forum_id = 'PFZ_026_Forum_01';  //program_section_id that belongs to the specific program forum from program_sections table
-// $evaluation_id = 'PFZ_026_Eval_01';  //program evaluation
-// // $certificate_id = 'void';	//Certificate id that belongs to a program
-// // $topicIds = array("PFZ_026_topic_01", "PFZ_026_topic_02", "PFZ_026_topic_03");  //Array of forum topic ids for this program
-// // $sections = array("evaluation", "forum");  //These are required sections to obtain certificate
-// // $no_sections = sizeof($sections);
-
-// //----------------DEFINE PERMANENT VARIABLES FOR THIS PROGRAM-----------------------//
-
-// // $sections_status = array();  //This array will hold the state of each program section whenever the page is loaded and reloaded
-// // $no_sections_completed = 0;
-
-// // $EnglishProgram->Set_Program($program_id, $pretestId, $posttestId, $forum_id, $evaluation_id, $certificate_id);
-
-// if(!$EnglishProgram->CheckProfileExists()){
-
-// 	$EnglishProgram->CreateProfile(); //Create empty English profile
-// }
-
-// $program_status = $EnglishProgram->CheckProgramStatus();	//First check in the doctor profile to see if the program status is completed.
-// $EnglishProgram->GetSectionsStatus();						//Allways get the sections status regardles of program completion.
-// $sections_status = $EnglishProgram->sections_status;		//Allways set the section status array (will hold sections status every time user visits program)
-
-// if($program_status){
-// 	$program_completed = true;
-// 	$no_sections_completed = $no_sections;
-// }
-
-
-// //if program has not been completed in the profile check sections one by one everytime the program page is reloaded
-// if(!$program_status){
-
-// 	//if all 3 sections are completed update profile with completed
-// 	if($EnglishProgram->CheckSectionsCompletedCustomized($sections)){
-// 	    $EnglishProgram->UpdateProfile();  //call UpdateProfile to insert program_status = 1, date of completion = NOW()
-// 		$program_completed = true;
-// 		$no_sections_completed = $no_sections;
-// 	}
-// }
-
-// //This will display program progress status
-// if($no_sections_completed !== $no_sections){
-//     	foreach($sections_status as $section => $status)
-//     	{
-//     		if( (strcmp($section,'pretest') == 0) || (strcmp($section,'postTest') == 0) ) continue;
-
-//     		elseif($status)
-//         	$no_sections_completed++;
-//     	}
-// }
-
-// $EnglishProgram->GetProgramEvaluationStatus();						//Allways get the sections status regardles of program completion.
-
-// // close connection 
-// mysqli_close($EnglishProgram->con);
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -142,13 +78,6 @@ if(isset($_POST['logout_submitted']))
 <script src="/js/jquery.blockUI.js"></script>
 
 
-
-<!--<script type="text/javascript">
-	var section_submitted = <?php //if($_SESSION['section_submitted']) {echo "true"; $_SESSION['section_submitted'] = false;} else echo "false";?>;
-	var sections = <?php //echo $no_sections; ?>;
-	var no_sections_completed = <?php //if( isset($no_sections_completed) ) echo $no_sections_completed; ?>;
-</script>
--->
 
 
 <script>
@@ -379,7 +308,7 @@ $(document).ready(function(){
 	                      
 	                      <li tab="tab2" title="Video" >An Update on the Safety of Smoking-cessation Therapies<br>Robert M. Anthenelli, M.D.</li>
 	                      
-	                      <li tab="tab3" title="Evalutation" >Program Evaluation</li>
+	                      <li tab="tab3" title="Evaluation" >Program Evaluation</li>
 					  </ul>
 	                  <div class="tab-content" >
 	                  	<?php  require('introduction.html'); ?>  

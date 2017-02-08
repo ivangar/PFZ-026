@@ -81,11 +81,9 @@
 
          //check q6
          if(document.getElementById("textQ6").value===""){
-          filledOut=false;
-          document.getElementById("noQuestion6").style.display='block';
+          theAnswers.push("NULL");
          }
          else{
-          document.getElementById("noQuestion6").style.display='none';
           theAnswers.push(document.getElementById("textQ6").value);
          }
 
@@ -274,7 +272,6 @@
                 <p id="noQuestion4" style="display:none; color:red; font-size:10px">Question 4 not filled out</p>
                 <p id="noQuestion5" style="display:none; color:red; font-size:10px">Question 5 not filled out</p>
                 <p id="noQuestion5a" style="display:none; color:red; font-size:10px">Question 5 not answered</p>
-                <p id="noQuestion6" style="display:none; color:red; font-size:10px">Question 6 not filled out</p>
               </li>
             </ul>
           </div>
