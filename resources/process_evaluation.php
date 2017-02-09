@@ -16,10 +16,10 @@ if(isset($_POST) && (!empty($_POST))){
 
 	//If user is logged in, use this login, otherwise use anonymous (doctor id '233' for local server)
 	if($_SESSION['user_id']){
-		$doctor_id = $_SESSION['user_id'];
+		$doctor_id = strval($_SESSION['user_id']);
 	}
 	else{
-		$doctor_id = strval(233);
+		$doctor_id = strval(1255);
 	}
 
 	$answer;
