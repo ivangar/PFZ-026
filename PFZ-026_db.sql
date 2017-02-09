@@ -110,7 +110,7 @@ LOCK TABLES `programs` WRITE;
 
 INSERT INTO `programs` (`program_id`, `area_id`, `sponsor`, `program_type`, `program_title`, `program_subtitle`, `program_description`, `image`, `language`, `authors`, `url`, `launch_date`, `expiration_date`)
 VALUES
-	('PFZ_026','other','PFZ','non-accredited','Smoking Cessations','Smoking is bad',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+	('PFZ_026','CU_01','PFZ','non-accredited','Smoking Cessations','Smoking is bad',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `programs` ENABLE KEYS */;
 UNLOCK TABLES;
 
