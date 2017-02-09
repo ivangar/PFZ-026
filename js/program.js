@@ -159,6 +159,7 @@
                         scrollTop: 0
                       }, 500);   
                       document.getElementById("evaluation_notification").style.display='block';
+                      document.getElementById("evaluation-full-list").style.display='none';
                 }
                 
             })
