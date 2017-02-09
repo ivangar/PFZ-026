@@ -40,37 +40,6 @@
 	    	
 	    });
 
-    	$('li#custom').click(function(){
-	    	var element = $( this ).attr( "id" );
-	    	
-	    	if( (element == "custom") ){
-				document.location.href = "https://" + window.location.hostname + "/programs/CCC_Symposium/rep_zone/login.html";
-	    	}
-	    	
-	    });
-
-	    $( "#bias_yes, #bias_no" ).change(function() {
-	        var $input = $( this );
-	        var my_val = $input.val();
-
-	        //Check that the check property returns true, then disable/enable accordingly
-	        if($input.prop( "checked" )){
-	          if(my_val === 'yes'){
-	            $( "#bias_no" ).prop( "disabled", true );
-	          }
-
-	            else{
-	              $( "#bias_yes" ).prop( "disabled", true );
-	            }
-	        }
-	          
-	        else{
-	            $( "#bias_yes" ).prop( "disabled", false );
-	            $( "#bias_no" ).prop( "disabled", false );
-	        }
-
-      	});
-
 
 	   // $(document).ready(function () {
        $("#submit_evaluation").click(function(){

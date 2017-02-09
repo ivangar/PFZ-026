@@ -27,18 +27,7 @@ if(isset($_COOKIE['rememberme']) && !empty($_COOKIE['rememberme']) ){
 }
 
 //If the user has not logged in, not show my account item
-if(!$fgmembersite->CheckLogin())
-{
-	$menu_item = "<li><a href='registration.php' class='main'>Register</a></li>";
-	$welcomebox = "<a href='registration.php' ><img width='270' height='270' src='images/welcomebox.jpg' alt='Register Now' /></a>";
-
-}
-
-else {
-	$menu_item = "<li><a href='account.php' class='main'>My Account</a></li>";
-	$welcomebox = "<img width='270' height='270' src='images/welcomebox2.jpg' alt='Mission Statement' />";
-}
-
+(!$fgmembersite->CheckLogin()) ? $menu_item = "<li><a href='/registration.php' class='accredited'>Register</a></li>" : $menu_item = "<li><a href='/account.php' class='accredited'>My Account</a></li>";
 
 //if user wants to logout
 if(isset($_POST['logout_submitted']))
@@ -146,31 +135,6 @@ $(document).ready(function(){
 			  $('.blockOverlay').attr('title','Click to unblock').click($.unblockUI); 
     }
 
-    $('.checkAccess').click(function() {
-    	if(!access){
-    		$.blockUI({ message: $('#deny-access'), 
-	        	css: { 
-					top:  ($(window).height() - 400) /2 + 'px', 
-					left: ($(window).width() - 500) /2 + 'px', 
-					cursor:'auto',
-					width: '430px',
-					height: '200px',
-					border: '10px solid #ccc',
-					padding: '0', 
-					backgroundColor: '#fff', 
-					'-moz-border-radius': '20px',
-					'-webkit-border-radius': '20px',
-				    'border-radius': '20px'},
-				 overlayCSS: { backgroundColor: '#000', opacity: .5, cursor:'not-allowed'}
-			});
-			$('.blockOverlay').click($.unblockUI); 
-			  return false;
-    	}
-
-    	else return true;
-
-    });
-
     //close dialog window on clicking the gif button
     $('#close, #close2').click(function() { 
 		$.unblockUI();
@@ -244,10 +208,6 @@ $(document).ready(function(){
 	<div id="access-request" style="display:none;"> 
 	<?php $fgmembersite->printModalDialog(); ?>
 </div> 
-
-<div id="deny-access" style="display:none;"> 
-	<?php $fgmembersite->printForbidAccess(); ?>
-</div>
 <table class="content" border="0" cellspacing="0">
   <tr valign="bottom">
     <td width="250" height="90" align="left" bgcolor="#FFFFFF" style="padding:0 0 10px 20px;" ><a href="/index.php"><img src="/images/dxLinkAP.jpg" width="147" height="42" align="left" alt="dxlink"/></a>
@@ -285,7 +245,7 @@ $(document).ready(function(){
 	          <li><a href="/clinical_update.php" class="accredited">Clinical Update</a></li>
 	        </ul>
 	      </li>
-	      <li><a href="/account.php" class="accredited">My Account</a></li>
+	      <?= $menu_item; ?>
 	      <li><a href="/contact_us.php" class="accredited">Contact Us</a></li>
       	  <li><a href="http://www.cjdiagnosis.com/?ac=diagnosis" target="_blank" class="accredited">CJ Diagnosis</a></li>
       	  <li><a href="http://www.cjcme.com//?ac=cme" target="_blank" class="accredited">CJ CME</a></li>
