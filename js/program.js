@@ -40,6 +40,7 @@
 	    	
 	    });
 
+      document.getElementById("evaluation_notification").style.display='none';
 
 	   // $(document).ready(function () {
        $("#submit_evaluation").click(function(){
@@ -152,7 +153,12 @@
                 }
 
                 if (data === "completed"){
-                    document.location.reload(true); //reload page in order to update access to post-test form
+                    //document.location.reload(true); //reload page in order to update access to post-test form
+                      document.getElementById("PFZ-026").reset();
+                      $("html, body").animate({
+                        scrollTop: 0
+                      }, 500);   
+                      document.getElementById("evaluation_notification").style.display='block';
                 }
                 
             })
