@@ -65,6 +65,7 @@ if(isset($_POST['logout_submitted']))
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script type="text/javascript" src="js/program.js"></script>
 <script src="/js/jquery.blockUI.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 
 
@@ -266,7 +267,7 @@ $(document).ready(function(){
 					  <ul>
 	                      <li tab="tab1" class="first current" >Home</li>
 	                      
-	                      <li tab="tab2" title="Video" >An Update on the Safety of Smoking-cessation Therapies<br>Robert M. Anthenelli, M.D.</li>
+	                      <li tab="tab2" title="*Watch Video*" ><i class="fa fa-video-camera fa-fw"></i> An Update on the Safety of Smoking-cessation Therapies<br>Robert M. Anthenelli, M.D.</li>
 	                      
 	                      <li tab="tab3" title="Evaluation" >Program Evaluation</li>
 					  </ul>

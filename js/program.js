@@ -5,7 +5,7 @@
 
     	var videos = ["player1"];
     	var video_sources = [
-    		"https://player.vimeo.com/video/190132047"
+    		"https://player.vimeo.com/video/205070955"
     		];
 
 	    //this global function needs to be accessible to the loaded section in the tab
@@ -27,9 +27,9 @@
 
     	$('#v-nav>ul>li').click(function(){
 	    	var element = $( this ).attr( "title" );
-	    	if( (element === "Video") ){
+	    	if( (element === "*Watch Video*") ){
 				var $frame = $('iframe#player1');
-				$frame.attr('src', "https://player.vimeo.com/video/190132047");	    				
+				$frame.attr('src', "https://player.vimeo.com/video/205070955");	    				
     		}
 	    	else{
 				
@@ -173,7 +173,7 @@
 
         }
         else{
-          console.log("form not filled out.");
+          document.getElementById("notFilledOut").style.display="block";
         }
 
 
